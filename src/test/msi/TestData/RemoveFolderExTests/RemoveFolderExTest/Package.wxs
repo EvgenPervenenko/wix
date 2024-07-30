@@ -1,0 +1,11 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
+    <Package Name="RemoveFolderExTest" Version="1.0.0" Manufacturer="Example Corporation" UpgradeCode="{B724D799-6288-471B-80FE-91F4E651E33F}" Scope="perUser">
+        <Property Id="REMOVEFOLDEREXTESTDIR">
+            <DirectorySearch Id="RemoveFolderExTestDirSearch" Path="[LocalAppDataFolder]RemoveFolderExTest" />
+        </Property>
+        
+        <Component Id="RemoveFolderTestComponent" Guid="{2BFD07F8-6154-4BBF-B5A1-AEB31E9CBC60}">
+            <util:RemoveFolderEx On="both" Property="REMOVEFOLDEREXTESTDIR" />
+        </Component>
+    </Package>
+</Wix>
